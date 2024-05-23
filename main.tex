@@ -1,6 +1,33 @@
-\documentclass{article}
+\documentclass[12pt,a4paper]{article}
+\usepackage{graphicx} 
+\usepackage[spanish]{babel}
+\usepackage{a4wide}
+\usepackage[
+style = apa,
+sortcites,
+url=true
+]{biblatex}
+\addbibresource{referencias.bib}
+
+\title{Documento Final}
+\author{Daniel Rincón Garcia}
+\date{\today}
 
 
 \begin{document}
-This is a document
+\maketitle
+
+\section{Citas}
+Citar con el comando textcite
+\textcite{alliance-for-water-stewardship-2019}
+
+Citar con el comando parencite
+\parencite{alliance-for-water-stewardship-2019}
+
+Citar con el comando cite
+\cite{alliance-for-water-stewardship-2019}
+
+
+
+\printbibliography
 \end{document}
