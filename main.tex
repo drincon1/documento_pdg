@@ -1,33 +1,69 @@
+% !BIB TS-program = biber
+
 \documentclass[12pt,a4paper]{article}
 \usepackage{graphicx} 
-\usepackage[spanish]{babel}
+\usepackage{subcaption}
+\usepackage[spanish, es-tabla]{babel}
 \usepackage{a4wide}
-\usepackage[
-style = apa,
-sortcites,
-url=true
-]{biblatex}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[style = apa, sortcites, url=true]{biblatex}
+\usepackage{csquotes}
+\usepackage[acronym]{glossaries}
+\usepackage{float}
+\usepackage{longtable}
+\makeglossaries
+\input{acronyms}
+\setcounter{section}{-1}
+
+\graphicspath{{images/}}
 \addbibresource{referencias.bib}
 
-\title{Documento Final}
-\author{Daniel Rincón Garcia}
-\date{\today}
 
-
+% Document
 \begin{document}
-\maketitle
-
-\section{Citas}
-Citar con el comando textcite
-\textcite{alliance-for-water-stewardship-2019}
-
-Citar con el comando parencite
-\parencite{alliance-for-water-stewardship-2019}
-
-Citar con el comando cite
-\cite{alliance-for-water-stewardship-2019}
 
 
+% Portada
+\input{sections/0-portada.tex}
+\clearpage
 
-\printbibliography
+% Indice
+\tableofcontents
+\clearpage
+
+% Siglas
+%\printglossary[type=\acronymtype]
+
+%\printglossary
+% \clearpage
+
+% Resumen
+\input{sections/99-resumen}
+\clearpage
+
+% Secciones 
+\input{sections/1-introduccion.tex}
+\input{sections/2-descripcion_general}
+\input{sections/3-diseno_especificaciones}
+\input{sections/4-desarrollo_diseno}
+\input{sections/5-implementacion}
+\input{sections/6-validacion}
+\input{sections/7-conclusiones}
+\clearpage
+
+%Anexos
+\appendix
+\input{appendix}
+\clearpage
+
+
+% Referencias
+
+\printbibliography[
+heading=bibintoc
+]
+
 \end{document}
+
+\endinput
